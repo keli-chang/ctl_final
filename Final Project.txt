@@ -1,0 +1,164 @@
+Title: Takeda Legal: Attorney Match-up
+Author: Keli Chang
+Before:<link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://www.takeda.com/globalassets/corporate/takeda_logo.svg');"></div>
+<h2 style="text-align:center;">Attorney Match-up Tool</h2>
+<p><b>This is a tool to help you determine which attorney is best suited for your legal needs. Please answer the following questions and your designated attorney's name will appear.</b></p>
+
+	
+DOC(1): <u>LEGAL WORK ORDER FORM</u> <br><br>
+Q(name): Hi, in order to begin we will need your contact information. Please list your first and last name:
+X:
+	DOC(1.1): REQUESTOR NAME: <x>name</x> <br><br>
+	Q(1.1):GOTO:email
+Q(email): Hi <x>name</x>, please list your email:
+X:
+	DOC(2.1): EMAIL: <x>email</x> <br><br>
+	Q(2.1):GOTO:office
+
+Q(office): Which office are you located in?
+A: US-Boston/Deerfield
+	Q(3.1):GOTO:team
+A: Asia
+	Q(3.2):GOTO:sorry
+A: UK
+	Q(3.3):GOTO:sorry
+Q(sorry): Sorry! This tool is for the US-Boston/Deerfield locations only! Please contact your local legal team instead.	
+
+DOC(5): DEPARTMENT: <x>dept</x> <br><br>
+
+Q(team): Please list your specific team that you operate in:
+X:
+	DOC(5.1): TEAM NAME: <x>team</x> <br><br>
+	Q(5.1):GOTO:3rdparty
+Q(3rdparty): Ok, now we will ask for some information regarding the third parties involved, including their company name and contact information.
+A: Sure thing	
+	Q(6.1):GOTO:3pname
+Q(3pname): Please list the company name of the third parties involved:
+X:
+	DOC(7.1): THIRD PARTY NAME(S): <x>3pname</x> <br><br>
+	Q(7.1):GOTO:3paddress
+Q(3paddress): And their address including street, city, state, and zip:
+X:
+	DOC(8.1): ADDRESS: <x>3paddress</x> <br><br>
+	Q(8.1):GOTO:budget
+Q(budget): Please list your budget for this project. Examples: <b>$4,000.00-5,000.00</b> or <b>$10,000.00</b>.
+X:
+	DOC(9.1): BUDGET: <x>budget</x> <br><br>
+	Q(9.1):GOTO:dealtype
+Q(dealtype): Which of the following best applies to what type of work you need?
+A: <u>Intellectual Property (IP)</u>: this includes any work on trademarks, copyright, or patents. Usually this applies if you are seeking to collaborate using a 3rd party's IP, such as a cell/molecule they own.
+	Q(10.1):GOTO:subIP
+A: <u>Compliance</u>: need some help in determining whether your project proposal is "legally" sound? Wondering what the laws are for another state regarding your project? This usually applies if your project will be out of state or international. Any questions regarding the FDA or GDPR rules apply also.
+	Q(10.2):GOTO:subComp
+A: <u>Business</u>: does your request not fall under the above? Usually this applies if you need an amendment to a contract, sales contract, collaboration agreement, consultant agreement, or any other contractual document. If you are seeking legal help to structure your business deals, this will apply.
+	Q(10.3):GOTO:subBus
+
+Q(subIP): Please list a brief description of your proposed work order:
+X:
+	DOC(11.1): BRIEF DESCRIPTION OF IP WORK ORDER: <x>subIP</x> <br><br>
+	Q(11.1):GOTO:IPCounsel
+Q(subComp): Which of the following applies the best for your proposed work order?
+A: GDPR compliance
+	DOC(12.1): TYPE OF COMPLIANCE WORK ORDER: <x>subComp</x> <br><br>
+	Q(12.1):GOTO:betsy
+A: FDA compliance
+	DOC(12.2): TYPE OF COMPLIANCE WORK ORDER: <x>subComp</x> <br><br>
+	Q(12.2):GOTO:patty
+A: Other
+	DOC(12.3): TYPE OF COMPLIANCE WORK ORDER: <x>subComp</x> <br><br>
+	Q(12.3):GOTO:subCompOTHER
+
+Q(subCompOTHER): Please list a brief description of your proposed work order:
+X:
+	DOC(13.1): IF OTHER, A BRIEF DESCRIPTION OF COMPLIANCE WORK ORDER: <x>subCompOTHER</x> <br><br>
+	Q(13.1):GOTO:CompCounsel
+
+DOC(14): BRIEF DESCRIPTION OF BUSINESS LEGAL WORK ORDER: <x>subBus</x> <br><br>
+Q(subBus): Please list a brief description of your proposed work order:
+X:
+	Q(14.1):GOTO:dept
+Q(dept): Please choose your department to finalize your designated attorney.
+A: Pathology
+	Q(15.1):GOTO:BusCounsel2
+A: Immunology
+	Q(15.2):GOTO:BusCounsel3
+A: Vaccines
+	Q(15.3):GOTO:BusCounsel4
+A: Rare Diseases
+	Q(15.4):GOTO:BusCounsel5
+A: Procurement
+	Q(15.5):GOTO:BusCounsel1
+
+DOC(16): DESIGNATED COUNSEL: <x>IPCounsel</x>
+Q(IPCounsel): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]: Your attorney is Constance Yeung. Her email is constance.yeung@takeda.com.	
+		
+Q(17): Description
+<All IP work automatically goes to Constance directly since she directs and manages the IP legal team. She then spreads the work orders throughout her team based on availability, subject matter expert, and current work loads. This is the current preferred method since the IP legal team consists roughly around 40 people (Sr. attorneys, Jr. attorneys, patent agents, paralegals, legal assistants, and foreign attorneys) and have their own process they follow.>
+
+DOC(18): DESIGNATED COUNSEL: <x>CompCounsel</x>
+Q(CompCounsel): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]: Your attorney is Brett Budinski. His email is brett.budinski@takeda.com.		
+	
+Q(19): Description
+<All Compliance work that isn't GDPR or FDA related automatically goes to Brett directly since he manages the Compliance legal team. This is possible since the Compliance legal team is fairly small so it is easier to manage.>
+
+DOC(20): DESIGNATED COUNSEL: <x>betsy</x>
+Q(betsy): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]: Your attorney is Betsy McSheffrey. Her email is betsy.mcsheffrey@takeda.com.	
+	
+	
+Q(21): Description
+<Betsy is the GDPR attorney on site.>
+
+DOC(22): DESIGNATED COUNSEL: <x>patty</x>
+Q(patty): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]: Your attorney is Patty Martinez. Her email is patty.martinez@takeda.com.	
+	
+	
+Q(23): Description
+<Patty is the FDA attorney on site.>
+
+DOC(24): DESIGNATED COUNSEL: <x>BusCounsel1</x>
+Q(BusCounsel1): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]: Your attorney is David Shields. His email is david.shields@takeda.com.	
+	
+	
+Q(25): Description
+<David manages the Procurement legal team. He spreads the work orders throughout his team based on availability and current work loads.>
+
+DOC(26): DESIGNATED COUNSEL: <x>BusCounsel2</x>
+Q(BusCounsel2): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]: Your attorney is Paula Leca. Her email is paula.leca@takeda.com.	
+	
+	
+Q(27): Description
+<Paula manages the Pathology legal team. She spreads the work orders throughout her team based on availability and current work loads.>
+
+DOC(28): DESIGNATED COUNSEL: <x>BusCounsel3</x>
+Q(BusCounsel3): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]: Your attorney is Mitch Krinsky. His email is mitch.krinsky@takeda.com.	
+	
+	
+Q(29): Description
+<Mitch manages the Immunology legal team. He spreads the work orders throughout his team based on availability and current work loads.>
+
+DOC(30): DESIGNATED COUNSEL: <x>BusCounsel4</x>
+Q(BusCounsel4): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]: Your attorney is Anne Canfield. Her email is anne.canfield@takeda.com.	
+	
+	
+Q(31): Description
+<Anne manages the Vaccines legal team. She spreads the work orders throughout her team based on availability and current work loads.>
+
+DOC(32): DESIGNATED COUNSEL: <x>BusCounsel5</x>
+Q(BusCounsel5): The following is your designated attorney. Please click below to see a copy of your responses.
+A[javascript:submit2('https://www.qnamarkup.org/doc/parse/html/','POST','t','Here is a copy of your response. Save as and email it to your designated attorney.')]:  Your attorney is Jeannette Potts. Her email is jeannette.potts@takeda.com.	
+	
+	
+Q(33): Description
+<Jeannette manages the Rare Diseases legal team. She spreads the work orders throughout her team based on availability and current work loads.>
+
+
+***end***
